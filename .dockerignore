@@ -1,0 +1,10 @@
+_build/
+.git/
+assets/node_modules/
+deps/
+test/
+priv/static/
+
+.*
+docker-compose.yml
+README.md
