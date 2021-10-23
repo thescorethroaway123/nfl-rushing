@@ -64,8 +64,3 @@ If you have any questions regarding requirements, do not hesitate to email your 
 * mix format
 * mix credo --strict
 * mix test --warnings-as-errors
-
-#### What could be added/improved
-
-* Add code coverage
-* Add deployment setup
