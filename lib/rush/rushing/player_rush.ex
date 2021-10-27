@@ -1,4 +1,4 @@
-defmodule Rush.PlayerRushes.PlayerRush do
+defmodule Rush.Rushing.PlayerRush do
   use Ecto.Schema
 
   schema "player_rushes" do

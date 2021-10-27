@@ -1,0 +1,22 @@
+<h1>Player rushes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Team</th>
+      <th>Position</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="player_rushes">
+    <%= for player_rush <- @player_rushes do %>
+      <tr id={"player_rush-#{player_rush.id}"}>
+        <td><%= player_rush.name %></td>
+        <td><%= player_rush.team %></td>
+        <td><%= player_rush.position %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,13 +1,11 @@
 defmodule Rush.Import do
-  import Ecto.Changeset
-
-  alias Rush.PlayerRushes.PlayerRush
   alias Rush.Repo
+  alias Rush.Rushing.PlayerRush
 
   def import_json_file!(filename) do
     player_rushes =
       filename
-      |> File.read!()
+      |> File.read!()
       |> Jason.decode!()
       |> Enum.map(&input_to_player_rush/1)
 
