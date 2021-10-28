@@ -1,21 +1,54 @@
 <h1>Player rushes</h1>
 
+<form phx-change="search_by_name" class="search-form">
+  <%= text_input :search_field, :query, placeholder: "Search player by name", autofocus: true, "phx-debounce": "300" %>
+</form>
+
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Team</th>
       <th>Position</th>
-
-      <th></th>
+      <th>Attempts per game</th>
+      <th>Attemps</th>
+      <th>Total yards</th>
+      <th>Yards per attempt</th>
+      <th>Yards per game</th>
+      <th>Touchdowns</th>
+      <th>Longest</th>
+      <th>1st downs</th>
+      <th>1st down %</th>
+      <th>20+ yards</th>
+      <th>40+ yards</th>
+      <th>Fumbles</th>
     </tr>
   </thead>
+
   <tbody id="player_rushes">
     <%= for player_rush <- @player_rushes do %>
-      <tr id={"player_rush-#{player_rush.id}"}>
+      <tr>
         <td><%= player_rush.name %></td>
         <td><%= player_rush.team %></td>
         <td><%= player_rush.position %></td>
+        <td><%= player_rush.avg_attempts_per_game %></td>
+        <td><%= player_rush.attempts %></td>
+        <td><%= player_rush.total_yards %></td>
+        <td><%= player_rush.avg_yards_per_attempt %></td>
+        <td><%= player_rush.yards_per_game %></td>
+        <td><%= player_rush.touchdowns %></td>
+      
+        <%= if player_rush.longest_is_touchdown do %>
+          <td><%= player_rush.longest %></td>
+        <% else %>
+          <td><%= player_rush.longest %> TD</td>
+        <% end %>
+
+        <td><%= player_rush.first_downs %></td>
+        <td><%= player_rush.first_downs_percentage %></td>
+        <td><%= player_rush.twenty_plus_yards %></td>
+        <td><%= player_rush.fourty_plus_yards %></td>
+        <td><%= player_rush.fumbles %></td>
       </tr>
     <% end %>
   </tbody>
