@@ -17,6 +17,8 @@ defmodule RushWeb.Router do
   scope "/", RushWeb do
     pipe_through(:browser)
 
+    get("/export", ExportController, :export)
+
     live("/", PlayerRushLive.Index, :index)
   end
 

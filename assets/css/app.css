@@ -75,6 +75,16 @@
   transform: rotate(180deg);
 }
 
+.rush-header {
+  display: flex;
+  align-items: baseline;
+}
+
+.export {
+  margin-left: 20px;
+  font-size: 22px;
+}
+
 /* LiveView specific classes for your customization */
 .phx-no-feedback.invalid-feedback,
 .phx-no-feedback .invalid-feedback {

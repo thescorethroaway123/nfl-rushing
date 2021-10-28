@@ -39,6 +39,9 @@ defmodule Rush.MixProject do
       {:ecto_sql, "~> 3.7"},
       {:postgrex, "~> 0.15"},
 
+      # CSV
+      {:nimble_csv, "~> 1.1"},
+
       # Telemetry
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},

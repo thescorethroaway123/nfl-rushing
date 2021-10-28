@@ -1,4 +1,10 @@
-<h1><%= gettext "Player Rushes" %></h1>
+<div class="rush-header">
+  <h1><%= gettext "Player Rushes" %></h1>
+
+  <div class="export">
+    <%= link "Export to CSV", to: Routes.export_path(@socket, :export, query: @query, ordering_field: @ordering_field, ordering_direction: @ordering_direction), download: true %>
+  </div>
+</div>
 
 <form phx-change="search_by_name" class="search-form">
   <%= text_input :search_field, :query, value: @query, placeholder: "Search player by name", autofocus: true, "phx-debounce": "300" %>
