@@ -1,0 +1,113 @@
+## This file is a PO Template file.
+##
+## "msgid"s here are often extracted from source code.
+## Add new translations manually only if they're dynamic
+## translations that can't be statically extracted.
+##
+## Run "mix gettext.extract" to bring this file up to
+## date. Leave "msgstr"s empty as changing them here as no
+## effect: edit them in PO (.po) files instead.
+msgid ""
+msgstr ""
+
+#, elixir-format
+#: lib/rush_web/live/player_rush_live/index.html.heex:13
+msgid "Attempts per game"
+msgstr ""
+
+#, elixir-format
+#: lib/rush_web/live/player_rush_live/index.html.heex:10
+msgid "Name"
+msgstr ""
+
+#, elixir-format
+#: lib/rush_web/live/player_rush_live/index.html.heex:1
+msgid "Player Rushes"
+msgstr ""
+
+#, elixir-format
+#: lib/rush_web/live/player_rush_live/index.html.heex:12
+msgid "Position"
+msgstr ""
+
+#, elixir-format
+#: lib/rush_web/live/player_rush_live/index.html.heex:11
+msgid "Team"
+msgstr ""
+
+#, elixir-format
+#: lib/rush_web/templates/page/index.html.heex:2
+msgid "Welcome to %{name}!"
+msgstr ""
+
+#, elixir-format
+#: lib/rush_web/live/player_rush_live/index.html.heex:20
+msgid "1st down"
+msgstr ""
+
+#, elixir-format
+#: lib/rush_web/live/player_rush_live/index.html.heex:21
+msgid "1st down %"
+msgstr ""
+
+#, elixir-format
+#: lib/rush_web/live/player_rush_live/index.html.heex:22
+msgid "20+ yards"
+msgstr ""
+
+#, elixir-format
+#: lib/rush_web/live/player_rush_live/index.html.heex:23
+msgid "40+ yards"
+msgstr ""
+
+#, elixir-format
+#: lib/rush_web/live/player_rush_live/index.html.heex:14
+msgid "Attempts"
+msgstr ""
+
+#, elixir-format
+#: lib/rush_web/live/player_rush_live/index.html.heex:24
+msgid "Fumbles"
+msgstr ""
+
+#, elixir-format
+#: lib/rush_web/live/player_rush_live/index.html.heex:19
+msgid "Longest"
+msgstr ""
+
+#, elixir-format
+#: lib/rush_web/live/pagination_component.ex:17
+#: lib/rush_web/live/pagination_component.ex:19
+msgid "Next"
+msgstr ""
+
+#, elixir-format
+#: lib/rush_web/live/pagination_component.ex:14
+msgid "Page %{page} of %{page_count}"
+msgstr ""
+
+#, elixir-format
+#: lib/rush_web/live/pagination_component.ex:9
+#: lib/rush_web/live/pagination_component.ex:11
+msgid "Previous"
+msgstr ""
+
+#, elixir-format
+#: lib/rush_web/live/player_rush_live/index.html.heex:15
+msgid "Total yards"
+msgstr ""
+
+#, elixir-format
+#: lib/rush_web/live/player_rush_live/index.html.heex:16
+msgid "Yards per attempt"
+msgstr ""
+
+#, elixir-format
+#: lib/rush_web/live/player_rush_live/index.html.heex:17
+msgid "Yards per game"
+msgstr ""
+
+#, elixir-format
+#: lib/rush_web/live/player_rush_live/index.html.heex:18
+msgid "Touchdowns"
+msgstr ""

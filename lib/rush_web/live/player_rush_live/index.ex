@@ -19,6 +19,41 @@ defmodule RushWeb.PlayerRushLive.Index do
     {:noreply, socket}
   end
 
+  def handle_event("previous_page", _value, %{assigns: %{page: page}} = socket) do
+    socket =
+      socket
+      |> assign(:page, page - 1)
+      |> put_player_rushes()
+
+    {:noreply, socket}
+  end
+
+  def handle_event("next_page", _value, %{assigns: %{page: page}} = socket) do
+    socket =
+      socket
+      |> assign(:page, page + 1)
+      |> put_player_rushes()
+
+    {:noreply, socket}
+  end
+
+  def handle_event("change_ordering", %{"field" => field}, socket) do
+    ordering_field = String.to_atom(field)
+    ordering_direction = ordering_direction(ordering_field, socket.assigns.ordering_field, socket.assigns.ordering_direction)
+
+    socket =
+      socket
+      |> assign(:ordering_field, ordering_field)
+      |> assign(:ordering_direction, ordering_direction)
+      |> put_player_rushes()
+
+    {:noreply, socket}
+  end
+
+  defp ordering_direction(field, ordering_field, :asc) when field == ordering_field, do: :desc
+  defp ordering_direction(field, ordering_field, :desc) when field == ordering_field, do: :asc
+  defp ordering_direction(_, _, _), do: :asc
+
   defp initial_assigns(socket) do
     socket
     |> assign(:page, 1)

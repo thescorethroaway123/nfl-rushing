@@ -8,12 +8,17 @@ defmodule Rush.Rushing do
   alias Rush.Repo
   alias Rush.Rushing.PlayerRush
 
+  @default_page_size 10
+
   def page_count(opts) do
-    opts
-    |> search_query()
-    |> limit(nil)
-    |> offset(nil)
-    |> Repo.aggregate(:count)
+    player_count =
+      opts
+      |> search_query()
+      |> limit(nil)
+      |> offset(nil)
+      |> Repo.aggregate(:count)
+
+    ceil(player_count / @default_page_size)
   end
 
   def search_players(opts) do
@@ -29,17 +34,17 @@ defmodule Rush.Rushing do
     |> apply_filter(opts)
   end
 
-  defp apply_ordering(query, %{ordering_field: key, ordering_direction: direction}) do
+  defp apply_ordering(query, %{ordering_field: field, ordering_direction: direction}) do
     from(
       player_rushes in query,
-      order_by: {^direction, ^key}
+      order_by: {^direction, ^field}
     )
   end
 
   defp apply_ordering(query, _opts), do: query
 
   defp apply_pagination(query, %{page: page} = opts) when not is_nil(page) do
-    page_size = Map.get(opts, :page_size, 10)
+    page_size = Map.get(opts, :page_size, @default_page_size)
 
     from(
       player_rushes in query,

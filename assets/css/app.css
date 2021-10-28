@@ -35,6 +35,46 @@
   margin: -1rem 0 2rem;
 }
 
+.player-name {
+  width: 185px;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-button {
+  width: 200px;
+}
+
+.pagination-text {
+  padding: 0 20px;
+}
+
+.sorted-header {
+  cursor: pointer;
+}
+
+.sorted-header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sort-icon {
+  width: 28px;
+  height: 28px;
+  margin-left: 5px;
+}
+
+.icon-reversed {
+  transform: rotate(180deg);
+}
+
 /* LiveView specific classes for your customization */
 .phx-no-feedback.invalid-feedback,
 .phx-no-feedback .invalid-feedback {

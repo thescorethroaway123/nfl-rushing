@@ -1,27 +1,42 @@
-<h1>Player rushes</h1>
+<h1><%= gettext "Player Rushes" %></h1>
 
 <form phx-change="search_by_name" class="search-form">
-  <%= text_input :search_field, :query, placeholder: "Search player by name", autofocus: true, "phx-debounce": "300" %>
+  <%= text_input :search_field, :query, value: @query, placeholder: "Search player by name", autofocus: true, "phx-debounce": "300" %>
 </form>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Team</th>
-      <th>Position</th>
-      <th>Attempts per game</th>
-      <th>Attemps</th>
-      <th>Total yards</th>
-      <th>Yards per attempt</th>
-      <th>Yards per game</th>
-      <th>Touchdowns</th>
-      <th>Longest</th>
-      <th>1st downs</th>
-      <th>1st down %</th>
-      <th>20+ yards</th>
-      <th>40+ yards</th>
-      <th>Fumbles</th>
+      <th class="player-name"><%= gettext "Name" %></th>
+      <th><%= gettext "Team" %></th>
+      <th><%= gettext "Position" %></th>
+      <th><%= gettext "Attempts per game" %></th>
+      <th><%= gettext "Attempts" %></th>
+      <%= live_component @socket, RushWeb.SortedHeaderComponent,
+        ordering_field: @ordering_field,
+        field: :total_yards,
+        ordering_direction: @ordering_direction,
+        title: gettext "Total yards"
+      %>
+      <th><%= gettext "Yards per attempt" %></th>
+      <th><%= gettext "Yards per game" %></th>
+      <%= live_component @socket, RushWeb.SortedHeaderComponent,
+        ordering_field: @ordering_field,
+        field: :touchdowns,
+        ordering_direction: @ordering_direction,
+        title: gettext "Touchdowns"
+      %>
+      <%= live_component @socket, RushWeb.SortedHeaderComponent,
+        ordering_field: @ordering_field,
+        field: :longest,
+        ordering_direction: @ordering_direction,
+        title: gettext "Longest"
+      %>
+      <th><%= gettext "1st down" %></th>
+      <th><%= gettext "1st down %" %></th>
+      <th><%= gettext "20+ yards" %></th>
+      <th><%= gettext "40+ yards" %></th>
+      <th><%= gettext "Fumbles" %></th>
     </tr>
   </thead>
 
@@ -53,3 +68,5 @@
     <% end %>
   </tbody>
 </table>
+
+<%= live_component @socket, RushWeb.PaginationComponent, page: @page, page_count: @page_count %>
