@@ -57,10 +57,32 @@ If you have any questions regarding requirements, do not hesitate to email your 
 
 #### Setup
 
-* mix ecto.setup
+##### Running with Docker
 
-#### Dev utilities
+This method requires Docker and docker-compose. Run the following commands:
 
-* mix format
-* mix credo --strict
-* mix test --warnings-as-errors
+```
+docker-compose build
+docker-compose run application mix ecto.setup
+docker-compose up
+```
+
+Then head over to http://localhost:4000/ to access the webapp.
+
+###### Running locally
+
+This method requires the following dependencies:
+
+* Elixir (~> 1.12)
+* Erlang (~> 24.1)
+* PostgreSQL (~> 12.0)
+
+To start, run the following commands:
+
+```
+mix deps.get
+mix ecto.setup
+mix phx.server
+```
+
+Then head over to http://localhost:4000/ to access the webapp.
