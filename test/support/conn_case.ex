@@ -22,6 +22,7 @@ defmodule RushWeb.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
+      import Rush.Factory
       import RushWeb.ConnCase
 
       alias RushWeb.Router.Helpers, as: Routes

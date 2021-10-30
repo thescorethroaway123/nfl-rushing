@@ -6,10 +6,7 @@ import Config
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
 config :rush, Rush.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "rush_test#{System.get_env("MIX_TEST_PARTITION")}",
-  hostname: "localhost",
+  url: "postgres://localhost/rush_test",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
 

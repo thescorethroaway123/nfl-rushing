@@ -1,4 +1,4 @@
-defmodule RushWeb.ErrorView do
+defmodule RushWeb.Views.ErrorView do
   use RushWeb, :view
 
   # If you want to customize a particular status code

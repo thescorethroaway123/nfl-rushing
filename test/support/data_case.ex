@@ -24,6 +24,7 @@ defmodule Rush.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import Rush.DataCase
+      import Rush.Factory
     end
   end
 

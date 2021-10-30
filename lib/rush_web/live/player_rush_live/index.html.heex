@@ -48,7 +48,7 @@
 
   <tbody id="player_rushes">
     <%= for player_rush <- @player_rushes do %>
-      <tr>
+      <tr class="player-rush">
         <td><%= player_rush.name %></td>
         <td><%= player_rush.team %></td>
         <td><%= player_rush.position %></td>
@@ -60,9 +60,9 @@
         <td><%= player_rush.touchdowns %></td>
       
         <%= if player_rush.longest_is_touchdown do %>
-          <td><%= player_rush.longest %></td>
-        <% else %>
           <td><%= player_rush.longest %> TD</td>
+        <% else %>
+          <td><%= player_rush.longest %></td>
         <% end %>
 
         <td><%= player_rush.first_downs %></td>
